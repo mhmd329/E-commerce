@@ -5,7 +5,7 @@ import { Home } from './components/Home';
 import { About } from './components/About';
 import { Store } from './components/Store';
 import { Navbar } from './components/Navbar';
-
+import './components/style.css'
 function App() {
   return (
     <>
