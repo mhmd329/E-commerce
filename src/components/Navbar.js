@@ -1,7 +1,9 @@
 import React from "react";
 import { Nav, Navbar as NavbarBs, Container, Button } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
+import { useShoppingCart } from "../context/ShoppingCartContext";
 export const Navbar = () => {
+  const {openCart , cartQuantity} = useShoppingCart();
   return (
     <NavbarBs sticky="top" className="bg-white shadow-sm mb-3">
       <Container>
@@ -24,6 +26,7 @@ export const Navbar = () => {
             height: "3rem",
             width: "3rem",
           }}
+          onClick={openCart}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -44,7 +47,7 @@ export const Navbar = () => {
               transform: "translate(25%, 25%)",
             }}
           >
-            3
+            {cartQuantity}
           </div>
         </Button>
       </Container>
